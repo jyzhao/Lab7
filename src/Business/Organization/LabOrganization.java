@@ -5,10 +5,25 @@
  */
 package Business.Organization;
 
+import Business.Role.AdminRole;
+import Business.Role.LabRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
  * @author zhaojiyuan
  */
-public class LabOrganization {
-    
+public class LabOrganization extends Organization{
+    public LabOrganization() {
+        super(Organization.TypeOfOrg.Lab.getValue());
+    }
+
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> role = new ArrayList<>();
+        
+        role.add(new LabRole());
+        return role;
+    }
 }

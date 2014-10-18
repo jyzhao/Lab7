@@ -5,10 +5,20 @@
  */
 package Business.Role;
 
+import Business.Business;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhaojiyuan
  */
-public class LabRole {
+public class LabRole extends Role{
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Business business) {
+        return null;
+    }
     
 }

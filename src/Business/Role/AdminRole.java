@@ -5,10 +5,23 @@
  */
 package Business.Role;
 
+import Business.Business;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import UserInterface.AdminWorkArea.AdminWorkAreaJPanel;
+import javax.swing.JPanel;
+
 /**
  *
  * @author zhaojiyuan
  */
-public class AdminRole {
+public class AdminRole extends Role{
+
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount userAccount, Organization organization, Business business) {
+        return new AdminWorkAreaJPanel(userProcessContainer,business);
+    }
+
+    
     
 }

@@ -5,6 +5,8 @@
  */
 package Business.UserAccount;
 
+import Business.Employee.Employee;
+import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
@@ -26,5 +28,24 @@ public class UserAccountDirectory {
         this.userAccountList = userAccountList;
     }
     
+    public UserAccount authenticateUser(String userName, String password) {
+            for (UserAccount ua : userAccountList) {
+                if (ua.getUserName().equals(userName) && ua.getPassword().equals(password)) {
+                    return ua;
+                }
+            }
+            return null;
+    }
     
+    public UserAccount createUserAccount(String username,String password,Employee employee,Role role) {
+        UserAccount ua = new UserAccount();
+        ua.setUserName(username);
+        ua.setPassword(password);
+        ua.setEmployee(employee);
+        ua.setRole(role);
+        
+        userAccountList.add(ua);
+        
+        return ua;
+    }
 }
